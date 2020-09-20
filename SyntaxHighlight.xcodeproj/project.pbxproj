@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		61E9F2182516F0C800FF30F2 /* SyntaxHighlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E9F20E2516F0C800FF30F2 /* SyntaxHighlight.framework */; };
 		61E9F21D2516F0C800FF30F2 /* SyntaxHighlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */; };
 		61E9F21F2516F0C800FF30F2 /* SyntaxHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 61E9F2112516F0C800FF30F2 /* SyntaxHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61E9F22A2516F3A400FF30F2 /* TMSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 61E9F2292516F3A400FF30F2 /* TMSyntax */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E9F22A2516F3A400FF30F2 /* TMSyntax in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +116,9 @@
 			dependencies = (
 			);
 			name = SyntaxHighlight;
+			packageProductDependencies = (
+				61E9F2292516F3A400FF30F2 /* TMSyntax */,
+			);
 			productName = SyntaxHighlight;
 			productReference = 61E9F20E2516F0C800FF30F2 /* SyntaxHighlight.framework */;
 			productType = "com.apple.product-type.framework";
@@ -163,6 +168,9 @@
 				Base,
 			);
 			mainGroup = 61E9F2042516F0C800FF30F2;
+			packageReferences = (
+				61E9F2282516F3A400FF30F2 /* XCRemoteSwiftPackageReference "TMSyntax" */,
+			);
 			productRefGroup = 61E9F20F2516F0C800FF30F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -452,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61E9F2282516F3A400FF30F2 /* XCRemoteSwiftPackageReference "TMSyntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/omochi/TMSyntax";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61E9F2292516F3A400FF30F2 /* TMSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61E9F2282516F3A400FF30F2 /* XCRemoteSwiftPackageReference "TMSyntax" */;
+			productName = TMSyntax;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 61E9F2052516F0C800FF30F2 /* Project object */;
 }
