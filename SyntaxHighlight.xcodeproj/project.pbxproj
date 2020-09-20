@@ -11,6 +11,8 @@
 		61E9F21D2516F0C800FF30F2 /* SyntaxHighlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */; };
 		61E9F21F2516F0C800FF30F2 /* SyntaxHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 61E9F2112516F0C800FF30F2 /* SyntaxHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61E9F22A2516F3A400FF30F2 /* TMSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 61E9F2292516F3A400FF30F2 /* TMSyntax */; };
+		61EC086625170F0100C71064 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 61EC085825170F0100C71064 /* LICENSE.md */; };
+		61EC086B25170F0100C71064 /* swift.tmLanguage.json in Resources */ = {isa = PBXBuildFile; fileRef = 61EC086125170F0100C71064 /* swift.tmLanguage.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,8 @@
 		61E9F2172516F0C800FF30F2 /* SyntaxHighlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyntaxHighlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlightTests.swift; sourceTree = "<group>"; };
 		61E9F21E2516F0C800FF30F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61EC085825170F0100C71064 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		61EC086125170F0100C71064 /* swift.tmLanguage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift.tmLanguage.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		61E9F21B2516F0C800FF30F2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				61EC085425170E8700C71064 /* Resources */,
 				61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */,
 				61E9F21E2516F0C800FF30F2 /* Info.plist */,
 			);
@@ -94,6 +99,31 @@
 				61E9F2102516F0C800FF30F2 /* SyntaxHighlight */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		61EC085425170E8700C71064 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				61EC085525170F0100C71064 /* swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		61EC085525170F0100C71064 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				61EC085825170F0100C71064 /* LICENSE.md */,
+				61EC086025170F0100C71064 /* syntaxes */,
+			);
+			path = swift;
+			sourceTree = "<group>";
+		};
+		61EC086025170F0100C71064 /* syntaxes */ = {
+			isa = PBXGroup;
+			children = (
+				61EC086125170F0100C71064 /* swift.tmLanguage.json */,
+			);
+			path = syntaxes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +224,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61EC086625170F0100C71064 /* LICENSE.md in Resources */,
+				61EC086B25170F0100C71064 /* swift.tmLanguage.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
