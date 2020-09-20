@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		617FC1DD251715EA00DD17DF /* swift.tmLanguage.json in Resources */ = {isa = PBXBuildFile; fileRef = 61EC086125170F0100C71064 /* swift.tmLanguage.json */; };
+		617FC1DE2517161000DD17DF /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 61EC085825170F0100C71064 /* LICENSE.md */; };
+		617FC1DF2517164200DD17DF /* SyntaxHighlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */; };
 		61E9F2182516F0C800FF30F2 /* SyntaxHighlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E9F20E2516F0C800FF30F2 /* SyntaxHighlight.framework */; };
-		61E9F21D2516F0C800FF30F2 /* SyntaxHighlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */; };
 		61E9F21F2516F0C800FF30F2 /* SyntaxHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 61E9F2112516F0C800FF30F2 /* SyntaxHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61E9F22A2516F3A400FF30F2 /* TMSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 61E9F2292516F3A400FF30F2 /* TMSyntax */; };
-		61EC086625170F0100C71064 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 61EC085825170F0100C71064 /* LICENSE.md */; };
-		61EC086B25170F0100C71064 /* swift.tmLanguage.json in Resources */ = {isa = PBXBuildFile; fileRef = 61EC086125170F0100C71064 /* swift.tmLanguage.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +56,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		617FC1DC251713C600DD17DF /* SyntaxHighlightTests */ = {
+			isa = PBXGroup;
+			children = (
+				61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */,
+				61E9F21E2516F0C800FF30F2 /* Info.plist */,
+				61EC085425170E8700C71064 /* Resources */,
+			);
+			path = SyntaxHighlightTests;
+			sourceTree = "<group>";
+		};
 		61E9F2042516F0C800FF30F2 = {
 			isa = PBXGroup;
 			children = (
@@ -86,9 +96,7 @@
 		61E9F21B2516F0C800FF30F2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				61EC085425170E8700C71064 /* Resources */,
-				61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */,
-				61E9F21E2516F0C800FF30F2 /* Info.plist */,
+				617FC1DC251713C600DD17DF /* SyntaxHighlightTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -224,8 +232,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61EC086625170F0100C71064 /* LICENSE.md in Resources */,
-				61EC086B25170F0100C71064 /* swift.tmLanguage.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +239,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				617FC1DE2517161000DD17DF /* LICENSE.md in Resources */,
+				617FC1DD251715EA00DD17DF /* swift.tmLanguage.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61E9F21D2516F0C800FF30F2 /* SyntaxHighlightTests.swift in Sources */,
+				617FC1DF2517164200DD17DF /* SyntaxHighlightTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +454,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JRA6VW2DG4;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/SyntaxHighlightTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +472,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JRA6VW2DG4;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/SyntaxHighlightTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

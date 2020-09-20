@@ -24,12 +24,12 @@ class SyntaxHighlightTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-//        let path = Bundle(for: SyntaxHighlightTests.self).path(forResource: "Swift.tmLanguage", ofType: nil)!
-//        let g = try! Grammar(contentsOf: URL(fileURLWithPath: path))
-//        let p = Parser(lines: ["// hello world"], grammar: g)
-//        p.isTraceEnabled = true
-//        let token = try p.parseLine()
-//        print(token)
+        let path = Bundle(for: SyntaxHighlightTests.self).path(forResource: "swift.tmLanguage.json", ofType: nil)!
+        let g = try! Grammar(contentsOf: URL(fileURLWithPath: path))
+        let p = Parser(lines: ["// hello world"], grammar: g)
+        p.isTraceEnabled = true
+        let token = try p.parseLine()
+        print(token)
 
     }
 
