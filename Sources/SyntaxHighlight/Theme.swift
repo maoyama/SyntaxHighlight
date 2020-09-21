@@ -8,6 +8,27 @@
 
 import Foundation
 
+public struct ScopeName: Equatable {
+    var string: String
+    var components: [String] {
+        string.components(separatedBy: ".")
+    }
+
+    public static func == (lhs: ScopeName, rhs: ScopeName) -> Bool {
+        return lhs.string == rhs.string
+    }
+
+    func componentsScopeNames() -> [ScopeName] {
+        var names: [ScopeName] = []
+        var c = components
+        for _ in components {
+            names.append(ScopeName(string: c.joined(separator: ".")))
+            c = c.dropLast()
+        }
+        return names
+    }
+}
+
 public struct Color {
     var hex: String
 }
@@ -17,24 +38,24 @@ public enum Font {
 }
 
 public struct ScopeStyle {
-    var scope: [String]
+    var scope: [ScopeName]
     var foreground: Color?
     var background: Color?
     var fontStyle: Set<Font>
 
     init?(for dictionary: [String: AnyObject]) {
         guard let scope = dictionary["scope"] as? String else { return nil }
-        guard let setting = dictionary["settings"] as? [String: AnyObject] else { return nil }
+        guard let settings = dictionary["settings"] as? [String: AnyObject] else { return nil }
 
-        self.scope = scope.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespaces) }
-        if let value = setting["foreground"] as? String {
+        self.scope = scope.components(separatedBy: ",").map { ScopeName(string: $0.trimmingCharacters(in: .whitespaces)) }
+        if let value = settings["foreground"] as? String {
             foreground = Color(hex: value)
         }
-        if let value = setting["background"] as? String {
+        if let value = settings["background"] as? String {
             background = Color(hex: value)
         }
         fontStyle = []
-        if let value = setting["fontStyle"] as? String {
+        if let value = settings["fontStyle"] as? String {
             if value.contains("italic") {
                 fontStyle.insert(.italic)
             }
@@ -72,16 +93,13 @@ public struct Theme {
         self.scopeStyles = scopeStyles
     }
 
-    func scopeStyle(ForScope scope: String) -> ScopeStyle? {
-        var components = scope.components(separatedBy: ".")
-        for _ in scope.components(separatedBy: ".") {
-            let theScope = components.joined(separator: ".")
+    func selectScopeStyle(with scopeName: ScopeName) -> ScopeStyle? {
+        for theScopeName in scopeName.componentsScopeNames() {
             for scopeStyle in scopeStyles {
-                if scopeStyle.scope.contains(theScope) {
+                if scopeStyle.scope.contains(theScopeName) {
                     return scopeStyle
                 }
             }
-            components = components.dropLast()
         }
         return nil
     }
