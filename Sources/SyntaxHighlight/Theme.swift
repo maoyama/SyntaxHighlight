@@ -70,10 +70,9 @@ public struct ScopeStyle {
 }
 
 public struct Theme {
-
-    public let UUID: String
-    public let name: String
-    public let scopeStyles: [ScopeStyle]
+    var UUID: String
+    var name: String
+    var scopeStyles: [ScopeStyle]
 
     public init?(dictionary: [String: Any]) {
         guard let UUID = dictionary["uuid"] as? String,
