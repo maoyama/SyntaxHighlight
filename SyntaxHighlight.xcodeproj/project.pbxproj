@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		616555F22518180E00E74013 /* Highlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616555F12518180E00E74013 /* Highlighter.swift */; };
+		616555F42518756E00E74013 /* Text+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616555F32518756E00E74013 /* Text+Init.swift */; };
 		617FC1DD251715EA00DD17DF /* swift.tmLanguage.json in Resources */ = {isa = PBXBuildFile; fileRef = 61EC086125170F0100C71064 /* swift.tmLanguage.json */; };
 		617FC1DE2517161000DD17DF /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 61EC085825170F0100C71064 /* LICENSE.md */; };
 		617FC1DF2517164200DD17DF /* SyntaxHighlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		616555F12518180E00E74013 /* Highlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlighter.swift; sourceTree = "<group>"; };
+		616555F32518756E00E74013 /* Text+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Init.swift"; sourceTree = "<group>"; };
 		617FC1E025171A0B00DD17DF /* Tomorrow.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tomorrow.tmTheme; sourceTree = "<group>"; };
 		617FC1E325171A3800DD17DF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		61E9F20E2516F0C800FF30F2 /* SyntaxHighlight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SyntaxHighlight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				61E9F2112516F0C800FF30F2 /* SyntaxHighlight.h */,
 				617FC1E325171A3800DD17DF /* Theme.swift */,
 				616555F12518180E00E74013 /* Highlighter.swift */,
+				616555F32518756E00E74013 /* Text+Init.swift */,
 				61E9F2122516F0C800FF30F2 /* Info.plist */,
 			);
 			path = SyntaxHighlight;
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				617FC1E425171A3800DD17DF /* Theme.swift in Sources */,
+				616555F42518756E00E74013 /* Text+Init.swift in Sources */,
 				616555F22518180E00E74013 /* Highlighter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

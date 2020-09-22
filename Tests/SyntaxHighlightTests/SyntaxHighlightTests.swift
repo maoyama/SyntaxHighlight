@@ -30,6 +30,9 @@ class SyntaxHighlightTests: XCTestCase {
         p.isTraceEnabled = true
         let token = try p.parseLine()
         print(token)
+        let lessThanFive = 0.0..<0.0
+        print(lessThanFive.contains(3.14))  // Prints "true"
+        print(lessThanFive.contains(5.0))
 
     }
 

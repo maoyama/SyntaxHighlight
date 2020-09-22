@@ -31,6 +31,9 @@ public struct ScopeName: Equatable {
 
 public struct Color {
     var hex: String
+    var hexIntValue: Int? {
+        Int("0x"+hex)
+    }
 }
 
 public enum Font {
