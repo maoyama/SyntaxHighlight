@@ -11,9 +11,10 @@
 		616555F42518756E00E74013 /* Text+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616555F32518756E00E74013 /* Text+Init.swift */; };
 		617FC1DD251715EA00DD17DF /* swift.tmLanguage.json in Resources */ = {isa = PBXBuildFile; fileRef = 61EC086125170F0100C71064 /* swift.tmLanguage.json */; };
 		617FC1DE2517161000DD17DF /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 61EC085825170F0100C71064 /* LICENSE.md */; };
-		617FC1DF2517164200DD17DF /* SyntaxHighlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */; };
+		617FC1DF2517164200DD17DF /* HighlighterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9F21C2516F0C800FF30F2 /* HighlighterTests.swift */; };
 		617FC1E225171A2100DD17DF /* Tomorrow.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 617FC1E025171A0B00DD17DF /* Tomorrow.tmTheme */; };
 		617FC1E425171A3800DD17DF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FC1E325171A3800DD17DF /* Theme.swift */; };
+		61A02A0E251A643200998DF3 /* DynamicColor in Frameworks */ = {isa = PBXBuildFile; productRef = 61A02A0D251A643200998DF3 /* DynamicColor */; };
 		61E9F2182516F0C800FF30F2 /* SyntaxHighlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E9F20E2516F0C800FF30F2 /* SyntaxHighlight.framework */; };
 		61E9F21F2516F0C800FF30F2 /* SyntaxHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 61E9F2112516F0C800FF30F2 /* SyntaxHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61E9F22A2516F3A400FF30F2 /* TMSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 61E9F2292516F3A400FF30F2 /* TMSyntax */; };
@@ -38,7 +39,7 @@
 		61E9F2112516F0C800FF30F2 /* SyntaxHighlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyntaxHighlight.h; sourceTree = "<group>"; };
 		61E9F2122516F0C800FF30F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61E9F2172516F0C800FF30F2 /* SyntaxHighlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyntaxHighlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlightTests.swift; sourceTree = "<group>"; };
+		61E9F21C2516F0C800FF30F2 /* HighlighterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlighterTests.swift; sourceTree = "<group>"; };
 		61E9F21E2516F0C800FF30F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61EC085825170F0100C71064 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		61EC086125170F0100C71064 /* swift.tmLanguage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift.tmLanguage.json; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A02A0E251A643200998DF3 /* DynamicColor in Frameworks */,
 				61E9F22A2516F3A400FF30F2 /* TMSyntax in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,7 +69,7 @@
 		617FC1DC251713C600DD17DF /* SyntaxHighlightTests */ = {
 			isa = PBXGroup;
 			children = (
-				61E9F21C2516F0C800FF30F2 /* SyntaxHighlightTests.swift */,
+				61E9F21C2516F0C800FF30F2 /* HighlighterTests.swift */,
 				61E9F21E2516F0C800FF30F2 /* Info.plist */,
 				61EC085425170E8700C71064 /* Resources */,
 			);
@@ -176,6 +178,7 @@
 			name = SyntaxHighlight;
 			packageProductDependencies = (
 				61E9F2292516F3A400FF30F2 /* TMSyntax */,
+				61A02A0D251A643200998DF3 /* DynamicColor */,
 			);
 			productName = SyntaxHighlight;
 			productReference = 61E9F20E2516F0C800FF30F2 /* SyntaxHighlight.framework */;
@@ -229,6 +232,7 @@
 			mainGroup = 61E9F2042516F0C800FF30F2;
 			packageReferences = (
 				61E9F2282516F3A400FF30F2 /* XCRemoteSwiftPackageReference "TMSyntax" */,
+				61A02A0C251A643200998DF3 /* XCRemoteSwiftPackageReference "DynamicColor" */,
 			);
 			productRefGroup = 61E9F20F2516F0C800FF30F2 /* Products */;
 			projectDirPath = "";
@@ -275,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				617FC1DF2517164200DD17DF /* SyntaxHighlightTests.swift in Sources */,
+				617FC1DF2517164200DD17DF /* HighlighterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +544,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		61A02A0C251A643200998DF3 /* XCRemoteSwiftPackageReference "DynamicColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yannickl/DynamicColor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		61E9F2282516F3A400FF30F2 /* XCRemoteSwiftPackageReference "TMSyntax" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/omochi/TMSyntax";
@@ -551,6 +563,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		61A02A0D251A643200998DF3 /* DynamicColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61A02A0C251A643200998DF3 /* XCRemoteSwiftPackageReference "DynamicColor" */;
+			productName = DynamicColor;
+		};
 		61E9F2292516F3A400FF30F2 /* TMSyntax */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 61E9F2282516F3A400FF30F2 /* XCRemoteSwiftPackageReference "TMSyntax" */;
