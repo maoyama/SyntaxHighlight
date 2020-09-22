@@ -24,7 +24,7 @@ public struct Highlighter {
 
     func tokens() throws -> [Token] {
         let tmTokens = try parser.parseLine()
-        return tmTokens.compactMap { Token(for: $0, theme: theme) }
+        return tmTokens.compactMap { Token(from: $0, theme: theme) }
     }
 
     func styledStrings() throws -> [(String, ScopeStyle?)] {
@@ -59,11 +59,11 @@ struct Token {
     var range: Range<String.Index>
     var style: ScopeStyle
 
-    init?(for token: TMSyntax.Token, theme: Theme) {
+    init?(from token: TMSyntax.Token, theme: Theme) {
         range = token.range
         var scopePath = token.scopePath
         while !scopePath.items.isEmpty {
-            if let style = theme.selectScopeStyle(with: .init(for: scopePath.top)) {
+            if let style = theme.selectScopeStyle(with: .init(from: scopePath.top)) {
                 self.style = style
                 return
             }
@@ -74,7 +74,7 @@ struct Token {
 }
 
 extension ScopeName {
-    init(for tmScopeName: TMSyntax.ScopeName) {
+    init(from tmScopeName: TMSyntax.ScopeName) {
         self.init(string: tmScopeName.stringValue)
     }
 }

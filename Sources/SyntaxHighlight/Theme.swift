@@ -46,7 +46,7 @@ public struct ScopeStyle {
     var background: Color?
     var fontStyle: Set<Font>
 
-    init?(for dictionary: [String: AnyObject]) {
+    init?(from dictionary: [String: AnyObject]) {
         guard let scope = dictionary["scope"] as? String else { return nil }
         guard let settings = dictionary["settings"] as? [String: AnyObject] else { return nil }
 
@@ -88,7 +88,7 @@ public struct Theme {
 
         var scopeStyles: [ScopeStyle] = []
         for raw in rawSettings {
-            if let scopeStyle = ScopeStyle(for: raw) {
+            if let scopeStyle = ScopeStyle(from: raw) {
                 scopeStyles.append(scopeStyle)
             }
         }
