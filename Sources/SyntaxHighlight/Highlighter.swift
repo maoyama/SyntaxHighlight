@@ -12,25 +12,30 @@ import TMSyntax
 typealias Grammar = TMSyntax.Grammar
 
 public struct Highlighter {
+    var string: String
     var theme: Theme
-    let parser: Parser
-    let string: String
+    var grammer: Grammar
 
-    init(string: String, theme: Theme, grammer: Grammar) {
-        self.string = string
-        self.theme = theme
-        self.parser = .init(string: string, grammar: grammer)
+    func styledStrings() throws -> [(String, ScopeStyle?)] {
+        var styledStrings: [(String, ScopeStyle?)] = []
+        let parser = self.parser()
+        while !parser.isAtEnd {
+            guard let currentLine = parser.currentLine else { continue }
+            let parsed = try parser.parseLine()
+            let parsedStyles = parsed.map { (tmToken) -> (String, ScopeStyle?) in
+                let token  = Token(from: tmToken, theme: theme)
+                if parsed.last == tmToken {
+                    return (String(currentLine[token.range]) + "\n", token.style)
+                }
+                return (String(currentLine[token.range]), token.style)
+            }
+            styledStrings += parsedStyles
+        }
+        return styledStrings
     }
 
-    func tokens() throws -> [Token] {
-        let tmTokens = try parser.parseLine()
-        return tmTokens.map { Token(from: $0, theme: theme) }
-    }
-
-    func styledStrings() throws -> [(String, ScopeStyle?)]  {
-        return try tokens().map({ (token) -> (String, ScopeStyle?) in
-            return (String(string[token.range]), token.style)
-        })
+    func parser() -> Parser {
+        Parser(string: string, grammar: grammer)
     }
 }
 
@@ -38,6 +43,7 @@ struct Token {
     var range: Range<String.Index>
     var style: ScopeStyle?
 
+    // これはThemeのextensionで
     init(from token: TMSyntax.Token, theme: Theme) {
         range = token.range
         var scopePath = token.scopePath

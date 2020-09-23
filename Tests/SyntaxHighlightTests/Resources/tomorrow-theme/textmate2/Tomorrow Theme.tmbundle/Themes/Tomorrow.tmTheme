@@ -32,6 +32,8 @@
 			<string>comment</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>bold italic underline</string>
 				<key>foreground</key>
 				<string>#8E908C</string>
 			</dict>

@@ -15,6 +15,30 @@ class HighlighterTests: XCTestCase {
 
     var grammar: Grammar!
     var theme: Theme!
+    let string = """
+public struct ScopeName: Equatable {
+    var string: String
+    var components: [String] {
+        string.components(separatedBy: ".")
+    }
+
+    public static func == (lhs: ScopeName, rhs: ScopeName) -> Bool {
+        return lhs.string == rhs.string
+    }
+
+    func componentsScopeNames() -> [ScopeName] {
+        var names: [ScopeName] = []
+        var c = components
+        for _ in components {
+            names.append(ScopeName(string: c.joined(separator: ".")))
+            c = c.dropLast()
+        }
+        return names
+    }
+}
+// comment
+
+"""
 
     override func setUpWithError() throws {
         let path = Bundle(for: HighlighterTests.self).path(forResource: "swift.tmLanguage", ofType: "json")!
@@ -25,16 +49,18 @@ class HighlighterTests: XCTestCase {
     }
 
     func testStyledStrings() throws {
-        let string = "public struct ScopeName: Equatable {"
         let highlighter = Highlighter(string: string, theme: theme, grammer: grammar)
         let styleds = try! highlighter.styledStrings()
         XCTAssertEqual(styleds[0].1!.foreground?.hex, "#8959A8")
         XCTAssertEqual(styleds[2].1!.foreground?.hex, "#8959A8")
         XCTAssertEqual(styleds[7].1!.foreground?.hex, "#718C00")
+        XCTAssertEqual(styleds.last?.1!.foreground?.hex, "#8E908C")
+        XCTAssertTrue(styleds.last!.1!.fontStyle.contains(.bold))
+        XCTAssertTrue(styleds.last!.1!.fontStyle.contains(.italic))
+        XCTAssertTrue(styleds.last!.1!.fontStyle.contains(.underline))
     }
 
     func testStyledStringsSame() throws {
-        let string = "public struct ScopeName: Equatable {"
         let highlighter = Highlighter(string: string, theme: theme, grammer: grammar)
         let styleds = try! highlighter.styledStrings()
         let string2 = styleds.reduce(into: "") { (result, styled) in
@@ -44,7 +70,7 @@ class HighlighterTests: XCTestCase {
     }
 
     func testPerformanceExample() throws {
-        // This is an example of a performance test case.
+
         self.measure {
             // Put the code you want to measure the time of here.
         }
