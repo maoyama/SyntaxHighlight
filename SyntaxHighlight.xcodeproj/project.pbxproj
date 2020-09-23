@@ -12,9 +12,15 @@
 		617FC1DD251715EA00DD17DF /* swift.tmLanguage.json in Resources */ = {isa = PBXBuildFile; fileRef = 61EC086125170F0100C71064 /* swift.tmLanguage.json */; };
 		617FC1DE2517161000DD17DF /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 61EC085825170F0100C71064 /* LICENSE.md */; };
 		617FC1DF2517164200DD17DF /* HighlighterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9F21C2516F0C800FF30F2 /* HighlighterTests.swift */; };
-		617FC1E225171A2100DD17DF /* Tomorrow.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 617FC1E025171A0B00DD17DF /* Tomorrow.tmTheme */; };
 		617FC1E425171A3800DD17DF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FC1E325171A3800DD17DF /* Theme.swift */; };
 		61A02A0E251A643200998DF3 /* DynamicColor in Frameworks */ = {isa = PBXBuildFile; productRef = 61A02A0D251A643200998DF3 /* DynamicColor */; };
+		61A02A24251ACBEC00998DF3 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61A02A17251ACBEC00998DF3 /* info.plist */; };
+		61A02A2B251ACC0000998DF3 /* Tomorrow.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 61A02A16251ACBEC00998DF3 /* Tomorrow.tmTheme */; };
+		61A02A2C251ACC0600998DF3 /* Tomorrow-Night-Eighties.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 61A02A12251ACBEC00998DF3 /* Tomorrow-Night-Eighties.tmTheme */; };
+		61A02A2D251ACC0600998DF3 /* Tomorrow-Night.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 61A02A13251ACBEC00998DF3 /* Tomorrow-Night.tmTheme */; };
+		61A02A2E251ACC0600998DF3 /* Tomorrow-Night-Blue.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 61A02A14251ACBEC00998DF3 /* Tomorrow-Night-Blue.tmTheme */; };
+		61A02A2F251ACC0600998DF3 /* Tomorrow-Night-Bright.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 61A02A15251ACBEC00998DF3 /* Tomorrow-Night-Bright.tmTheme */; };
+		61A02A34251ACC3D00998DF3 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 61A02A32251ACC3D00998DF3 /* LICENSE.md */; };
 		61E9F2182516F0C800FF30F2 /* SyntaxHighlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E9F20E2516F0C800FF30F2 /* SyntaxHighlight.framework */; };
 		61E9F21F2516F0C800FF30F2 /* SyntaxHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 61E9F2112516F0C800FF30F2 /* SyntaxHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61E9F22A2516F3A400FF30F2 /* TMSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 61E9F2292516F3A400FF30F2 /* TMSyntax */; };
@@ -33,8 +39,16 @@
 /* Begin PBXFileReference section */
 		616555F12518180E00E74013 /* Highlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlighter.swift; sourceTree = "<group>"; };
 		616555F32518756E00E74013 /* Text+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Init.swift"; sourceTree = "<group>"; };
-		617FC1E025171A0B00DD17DF /* Tomorrow.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tomorrow.tmTheme; sourceTree = "<group>"; };
 		617FC1E325171A3800DD17DF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		61A02A12251ACBEC00998DF3 /* Tomorrow-Night-Eighties.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tomorrow-Night-Eighties.tmTheme"; sourceTree = "<group>"; };
+		61A02A13251ACBEC00998DF3 /* Tomorrow-Night.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tomorrow-Night.tmTheme"; sourceTree = "<group>"; };
+		61A02A14251ACBEC00998DF3 /* Tomorrow-Night-Blue.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tomorrow-Night-Blue.tmTheme"; sourceTree = "<group>"; };
+		61A02A15251ACBEC00998DF3 /* Tomorrow-Night-Bright.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tomorrow-Night-Bright.tmTheme"; sourceTree = "<group>"; };
+		61A02A16251ACBEC00998DF3 /* Tomorrow.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tomorrow.tmTheme; sourceTree = "<group>"; };
+		61A02A17251ACBEC00998DF3 /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		61A02A1E251ACBEC00998DF3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		61A02A31251ACC3D00998DF3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		61A02A32251ACC3D00998DF3 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		61E9F20E2516F0C800FF30F2 /* SyntaxHighlight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SyntaxHighlight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E9F2112516F0C800FF30F2 /* SyntaxHighlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyntaxHighlight.h; sourceTree = "<group>"; };
 		61E9F2122516F0C800FF30F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +88,46 @@
 				61EC085425170E8700C71064 /* Resources */,
 			);
 			path = SyntaxHighlightTests;
+			sourceTree = "<group>";
+		};
+		61A02A0F251ACBEC00998DF3 /* textmate2 */ = {
+			isa = PBXGroup;
+			children = (
+				61A02A10251ACBEC00998DF3 /* Tomorrow Theme.tmbundle */,
+				61A02A1E251ACBEC00998DF3 /* README.md */,
+			);
+			path = textmate2;
+			sourceTree = "<group>";
+		};
+		61A02A10251ACBEC00998DF3 /* Tomorrow Theme.tmbundle */ = {
+			isa = PBXGroup;
+			children = (
+				61A02A11251ACBEC00998DF3 /* Themes */,
+				61A02A17251ACBEC00998DF3 /* info.plist */,
+			);
+			path = "Tomorrow Theme.tmbundle";
+			sourceTree = "<group>";
+		};
+		61A02A11251ACBEC00998DF3 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				61A02A12251ACBEC00998DF3 /* Tomorrow-Night-Eighties.tmTheme */,
+				61A02A13251ACBEC00998DF3 /* Tomorrow-Night.tmTheme */,
+				61A02A14251ACBEC00998DF3 /* Tomorrow-Night-Blue.tmTheme */,
+				61A02A15251ACBEC00998DF3 /* Tomorrow-Night-Bright.tmTheme */,
+				61A02A16251ACBEC00998DF3 /* Tomorrow.tmTheme */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		61A02A30251ACC2600998DF3 /* tomorrow-theme */ = {
+			isa = PBXGroup;
+			children = (
+				61A02A0F251ACBEC00998DF3 /* textmate2 */,
+				61A02A32251ACC3D00998DF3 /* LICENSE.md */,
+				61A02A31251ACC3D00998DF3 /* README.md */,
+			);
+			path = "tomorrow-theme";
 			sourceTree = "<group>";
 		};
 		61E9F2042516F0C800FF30F2 = {
@@ -125,7 +179,7 @@
 		61EC085425170E8700C71064 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				617FC1E025171A0B00DD17DF /* Tomorrow.tmTheme */,
+				61A02A30251ACC2600998DF3 /* tomorrow-theme */,
 				61EC085525170F0100C71064 /* swift */,
 			);
 			path = Resources;
@@ -249,6 +303,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A02A34251ACC3D00998DF3 /* LICENSE.md in Resources */,
+				61A02A24251ACBEC00998DF3 /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,9 +312,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A02A2E251ACC0600998DF3 /* Tomorrow-Night-Blue.tmTheme in Resources */,
+				61A02A2D251ACC0600998DF3 /* Tomorrow-Night.tmTheme in Resources */,
 				617FC1DE2517161000DD17DF /* LICENSE.md in Resources */,
 				617FC1DD251715EA00DD17DF /* swift.tmLanguage.json in Resources */,
-				617FC1E225171A2100DD17DF /* Tomorrow.tmTheme in Resources */,
+				61A02A2F251ACC0600998DF3 /* Tomorrow-Night-Bright.tmTheme in Resources */,
+				61A02A2B251ACC0000998DF3 /* Tomorrow.tmTheme in Resources */,
+				61A02A2C251ACC0600998DF3 /* Tomorrow-Night-Eighties.tmTheme in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
