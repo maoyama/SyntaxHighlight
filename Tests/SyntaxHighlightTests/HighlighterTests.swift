@@ -69,10 +69,10 @@ public struct ScopeName: Equatable {
         XCTAssertEqual(string, string2)
     }
 
-    func testPerformanceExample() throws {
-
+    func testPerformanceParse() throws {
+        let highlighter = Highlighter(string: string, theme: theme, grammer: grammar)
         self.measure {
-            // Put the code you want to measure the time of here.
+            let _ = try! highlighter.styledStrings()
         }
     }
 
