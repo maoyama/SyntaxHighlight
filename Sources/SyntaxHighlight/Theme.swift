@@ -79,10 +79,8 @@ public struct Theme {
             let name = dictionary["name"] as? String,
             let rawSettings = dictionary["settings"] as? [[String: AnyObject]]
             else { return nil }
-
         self.UUID = UUID
         self.name = name
-
         var scopeStyles: [ScopeStyle] = []
         for raw in rawSettings {
             if let scopeStyle = ScopeStyle(from: raw) {
@@ -92,7 +90,7 @@ public struct Theme {
         self.scopeStyles = scopeStyles
     }
 
-    func selectScopeStyle(with scopeName: ScopeName) -> ScopeStyle? {
+    func selectScopeStyle(for scopeName: ScopeName) -> ScopeStyle? {
         for theScopeName in scopeName.componentsScopeNames() {
             for scopeStyle in scopeStyles {
                 if scopeStyle.scope.contains(theScopeName) {

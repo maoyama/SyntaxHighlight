@@ -16,18 +16,19 @@ public struct Highlighter {
     var theme: Theme
     var grammer: Grammar
 
-    func styledStrings() throws -> [(String, ScopeStyle?)] {
+    public func styledStrings() throws -> [(String, ScopeStyle?)] {
         var styledStrings: [(String, ScopeStyle?)] = []
         let parser = self.parser()
         while !parser.isAtEnd {
             guard let currentLine = parser.currentLine else { continue }
             let parsed = try parser.parseLine()
-            let parsedStyles = parsed.map { (tmToken) -> (String, ScopeStyle?) in
-                let token  = Token(from: tmToken, theme: theme)
-                if parsed.last == tmToken {
-                    return (String(currentLine[token.range]) + "\n", token.style)
+            let parsedStyles = parsed.map { (token) -> (String, ScopeStyle?) in
+                var string = String(currentLine[token.range])
+                if parsed.last == token {
+                    string += "\n"
                 }
-                return (String(currentLine[token.range]), token.style)
+                let style = theme.selectScopeStyle(for: token)
+                return (string, style)
             }
             styledStrings += parsedStyles
         }
@@ -39,22 +40,16 @@ public struct Highlighter {
     }
 }
 
-struct Token {
-    var range: Range<String.Index>
-    var style: ScopeStyle?
-
-    // これはThemeのextensionで
-    init(from token: TMSyntax.Token, theme: Theme) {
-        range = token.range
+extension Theme {
+    func selectScopeStyle(for token: TMSyntax.Token) -> ScopeStyle? {
         var scopePath = token.scopePath
         while !scopePath.items.isEmpty {
-            if let style = theme.selectScopeStyle(with: .init(from: scopePath.top)) {
-                self.style = style
-                return
+            if let style = selectScopeStyle(for: .init(from: scopePath.top)) {
+                return style
             }
             scopePath.items.removeLast()
         }
-        style = nil
+        return nil
     }
 }
 
