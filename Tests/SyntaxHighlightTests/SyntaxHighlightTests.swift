@@ -1,18 +1,7 @@
-//
-//  SyntaxHighlightTests.swift
-//  SyntaxHighlightTests
-//
-//  Created by Makoto Aoyama on 2020/09/20.
-//  Copyright © 2020 dev.aoyama. All rights reserved.
-//
-
 import XCTest
 @testable import SyntaxHighlight
-@testable import TMSyntax
-import SwiftUI
 
-class HighlighterTests: XCTestCase {
-
+final class SyntaxHighlightTests: XCTestCase {
     var grammar: Grammar!
     var theme: Theme!
     let string = """
@@ -41,10 +30,10 @@ public struct ScopeName: Equatable {
 """
 
     override func setUpWithError() throws {
-        let path = Bundle(for: HighlighterTests.self).path(forResource: "swift.tmLanguage", ofType: "json")!
-        grammar = try Grammar(contentsOf: URL(fileURLWithPath: path))
-        let themePath = Bundle(for: HighlighterTests.self).path(forResource: "Tomorrow", ofType: "tmTheme")!
-        let plist = NSDictionary(contentsOfFile: themePath)! as [NSObject: AnyObject]
+        let url = Bundle.module.url(forResource: "swift.tmLanguage", withExtension: "json")!
+        grammar = try Grammar(contentsOf: url)
+        let themeURL = Bundle.module.url(forResource: "Tomorrow", withExtension: "tmTheme")!
+        let plist = NSDictionary(contentsOf: themeURL)! as [NSObject: AnyObject]
         theme = Theme(dictionary: plist as! [String : AnyObject])!
     }
 
@@ -76,4 +65,7 @@ public struct ScopeName: Equatable {
         }
     }
 
+    static var allTests = [
+        ("testStyledStrings", testStyledStrings),
+    ]
 }
