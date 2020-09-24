@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import DynamicColor
 
-extension Text {
+public extension Text {
     init(from highlighter: Highlighter) {
         guard let styleds = try? highlighter.styledStrings() else {
             self.init(verbatim: highlighter.string)
@@ -38,8 +38,8 @@ extension Text {
 }
 
 
-extension SwiftUI.Color {
-    public init?(_ color: SyntaxHighlight.Color) {
+public extension SwiftUI.Color {
+    init?(_ color: SyntaxHighlight.Color) {
         self.init(hexString: color.hex)
     }
 }

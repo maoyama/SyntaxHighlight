@@ -33,8 +33,7 @@ public struct ScopeName: Equatable {
         let url = Bundle.module.url(forResource: "swift.tmLanguage", withExtension: "json")!
         grammar = try Grammar(contentsOf: url)
         let themeURL = Bundle.module.url(forResource: "Tomorrow", withExtension: "tmTheme")!
-        let plist = NSDictionary(contentsOf: themeURL)! as [NSObject: AnyObject]
-        theme = Theme(dictionary: plist as! [String : AnyObject])!
+        theme = try Theme(contentsOf: themeURL)
     }
 
     func testStyledStrings() throws {

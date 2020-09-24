@@ -7,20 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		612994E3251D09F900CEE132 /* swift.tmLanguage.json in Resources */ = {isa = PBXBuildFile; fileRef = 612994E2251D09F900CEE132 /* swift.tmLanguage.json */; };
 		6145B620251CE12100D4F465 /* ExamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145B61F251CE12100D4F465 /* ExamplesApp.swift */; };
 		6145B622251CE12100D4F465 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145B621251CE12100D4F465 /* ContentView.swift */; };
 		6145B624251CE12500D4F465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6145B623251CE12500D4F465 /* Assets.xcassets */; };
 		6145B627251CE12500D4F465 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6145B626251CE12500D4F465 /* Preview Assets.xcassets */; };
 		6145B64F251CE31F00D4F465 /* SyntaxHighlight in Frameworks */ = {isa = PBXBuildFile; productRef = 6145B64E251CE31F00D4F465 /* SyntaxHighlight */; };
+		61B22E5D251CFADB00312951 /* JavaScript.tmLanguage.json in Resources */ = {isa = PBXBuildFile; fileRef = 61B306D4251CEC1800AB5CDA /* JavaScript.tmLanguage.json */; };
+		61B22E61251CFAE100312951 /* Tomorrow.tmTheme in Resources */ = {isa = PBXBuildFile; fileRef = 61B306FC251CEF7F00AB5CDA /* Tomorrow.tmTheme */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		612994E2251D09F900CEE132 /* swift.tmLanguage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = swift.tmLanguage.json; path = ../../../Tests/SyntaxHighlightTests/Dependencies/swift/syntaxes/swift.tmLanguage.json; sourceTree = "<group>"; };
 		6145B61C251CE12100D4F465 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6145B61F251CE12100D4F465 /* ExamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesApp.swift; sourceTree = "<group>"; };
 		6145B621251CE12100D4F465 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6145B623251CE12500D4F465 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6145B626251CE12500D4F465 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6145B628251CE12500D4F465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61B306D4251CEC1800AB5CDA /* JavaScript.tmLanguage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JavaScript.tmLanguage.json; sourceTree = "<group>"; };
+		61B306D5251CEC1800AB5CDA /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		61B306F0251CEF1700AB5CDA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		61B306FC251CEF7F00AB5CDA /* Tomorrow.tmTheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tomorrow.tmTheme; sourceTree = "<group>"; };
+		61B30706251CEFB600AB5CDA /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,8 @@
 			children = (
 				6145B61F251CE12100D4F465 /* ExamplesApp.swift */,
 				6145B621251CE12100D4F465 /* ContentView.swift */,
+				61B306F7251CEF7F00AB5CDA /* Themes */,
+				61B306D3251CEC1800AB5CDA /* Syntaxes */,
 				6145B623251CE12500D4F465 /* Assets.xcassets */,
 				6145B628251CE12500D4F465 /* Info.plist */,
 				6145B625251CE12500D4F465 /* Preview Content */,
@@ -69,6 +80,26 @@
 				6145B626251CE12500D4F465 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		61B306D3251CEC1800AB5CDA /* Syntaxes */ = {
+			isa = PBXGroup;
+			children = (
+				61B306F0251CEF1700AB5CDA /* LICENSE.txt */,
+				61B306D4251CEC1800AB5CDA /* JavaScript.tmLanguage.json */,
+				612994E2251D09F900CEE132 /* swift.tmLanguage.json */,
+				61B306D5251CEC1800AB5CDA /* Readme.md */,
+			);
+			path = Syntaxes;
+			sourceTree = "<group>";
+		};
+		61B306F7251CEF7F00AB5CDA /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				61B30706251CEFB600AB5CDA /* LICENSE.md */,
+				61B306FC251CEF7F00AB5CDA /* Tomorrow.tmTheme */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6145B627251CE12500D4F465 /* Preview Assets.xcassets in Resources */,
+				61B22E61251CFAE100312951 /* Tomorrow.tmTheme in Resources */,
 				6145B624251CE12500D4F465 /* Assets.xcassets in Resources */,
+				61B22E5D251CFADB00312951 /* JavaScript.tmLanguage.json in Resources */,
+				612994E3251D09F900CEE132 /* swift.tmLanguage.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +239,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -260,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -277,7 +311,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Examples/Preview Content\"";
-				DEVELOPMENT_TEAM = JRA6VW2DG4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Examples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -299,7 +333,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Examples/Preview Content\"";
-				DEVELOPMENT_TEAM = JRA6VW2DG4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Examples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

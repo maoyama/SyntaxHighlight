@@ -9,12 +9,18 @@
 import Foundation
 import TMSyntax
 
-typealias Grammar = TMSyntax.Grammar
+public typealias Grammar = TMSyntax.Grammar
 
 public struct Highlighter {
-    var string: String
-    var theme: Theme
-    var grammer: Grammar
+    public var string: String
+    public var theme: Theme
+    public var grammer: Grammar
+
+    public init(string: String, theme: Theme, grammer: Grammar) {
+        self.string = string
+        self.theme = theme
+        self.grammer = grammer
+    }
 
     public func styledStrings() throws -> [(String, ScopeStyle?)] {
         var styledStrings: [(String, ScopeStyle?)] = []

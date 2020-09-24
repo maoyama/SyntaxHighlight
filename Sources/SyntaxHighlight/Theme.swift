@@ -38,12 +38,12 @@ public enum Font {
 }
 
 public struct ScopeStyle {
-    var scope: [ScopeName]
-    var foreground: Color?
-    var background: Color?
-    var fontStyle: Set<Font>
+    public var scope: [ScopeName]
+    public var foreground: Color?
+    public var background: Color?
+    public var fontStyle: Set<Font>
 
-    init?(from dictionary: [String: AnyObject]) {
+    public init?(from dictionary: [String: AnyObject]) {
         guard let scope = dictionary["scope"] as? String else { return nil }
         guard let settings = dictionary["settings"] as? [String: AnyObject] else { return nil }
 
@@ -70,15 +70,25 @@ public struct ScopeStyle {
 }
 
 public struct Theme {
-    var UUID: String
-    var name: String
-    var scopeStyles: [ScopeStyle]
+    public enum Error : LocalizedError {
+        case decodeError
 
-    public init?(dictionary: [String: Any]) {
+        public var errorDescription: String? {
+            switch self {
+            case .decodeError: return "decode error"
+            }
+        }
+    }
+
+    public var UUID: String
+    public var name: String
+    public var scopeStyles: [ScopeStyle]
+
+    public init(dictionary: [String: Any]) throws {
         guard let UUID = dictionary["uuid"] as? String,
             let name = dictionary["name"] as? String,
             let rawSettings = dictionary["settings"] as? [[String: AnyObject]]
-            else { return nil }
+            else { throw Error.decodeError }
         self.UUID = UUID
         self.name = name
         var scopeStyles: [ScopeStyle] = []
@@ -88,6 +98,13 @@ public struct Theme {
             }
         }
         self.scopeStyles = scopeStyles
+    }
+
+    public init(contentsOf url: URL) throws {
+        guard let dic = try NSDictionary(contentsOf: url, error: ()) as? [String : AnyObject] else {
+            throw Error.decodeError
+        }
+        try self.init(dictionary: dic)
     }
 
     func selectScopeStyle(for scopeName: ScopeName) -> ScopeStyle? {
