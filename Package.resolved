@@ -21,11 +21,11 @@
       },
       {
         "package": "Onigmo",
-        "repositoryURL": "https://github.com/omochi/Onigmo-swift-build",
+        "repositoryURL": "https://github.com/maoyama/Onigmo-swift-build",
         "state": {
           "branch": null,
-          "revision": "89cfa1fad5e16902e61cf5bdbb2327b17d710ad1",
-          "version": "1.1.0"
+          "revision": "d0dd20ecbad3aa0de7083c3e522ef722ed738b8a",
+          "version": "1.2.0"
         }
       },
       {
@@ -39,11 +39,11 @@
       },
       {
         "package": "TMSyntax",
-        "repositoryURL": "https://github.com/omochi/TMSyntax",
+        "repositoryURL": "https://github.com/maoyama/TMSyntax",
         "state": {
-          "branch": "master",
-          "revision": "2295fc8f5186bf92acab26072fbb76e8efe88da6",
-          "version": null
+          "branch": null,
+          "revision": "47fa35533c126d0b068004d5b67277c1ffcfb903",
+          "version": "0.1.0"
         }
       }
     ]

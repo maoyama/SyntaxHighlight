@@ -16,7 +16,7 @@ let package = Package(
             targets: ["SyntaxHighlight"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/omochi/TMSyntax", .branch("master")),
+        .package(url: "https://github.com/maoyama/TMSyntax", .upToNextMajor(from: "0.1.0")),
         .package(url: "https://github.com/yannickl/DynamicColor", .upToNextMajor(from: "5.0.1")),
     ],
     targets: [
