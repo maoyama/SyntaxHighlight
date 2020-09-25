@@ -1,6 +1,6 @@
 # SyntaxHighlight
 
-SyntaxHighlight makes TextMate-style syntax highlighting easy for SwiftUI.Text.
+SyntaxHighlight makes TextMate-style syntax highlighting easy for SwiftUI.
 
 <img src="./ScreenShots/js.png" width="380"><img src="./ScreenShots/swift.png" width="380">
 
