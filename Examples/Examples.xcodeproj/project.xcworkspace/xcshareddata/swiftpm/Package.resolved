@@ -41,9 +41,9 @@
         "package": "SyntaxHighlight",
         "repositoryURL": "https://github.com/maoyama/SyntaxHighlight",
         "state": {
-          "branch": "main",
-          "revision": "eee98681113dd518111bc4e7425c33607898f95f",
-          "version": null
+          "branch": null,
+          "revision": "9c121bd15bfc318d2180038a9e3c38147d954a1f",
+          "version": "0.1.0"
         }
       },
       {
