@@ -7,7 +7,7 @@ SyntaxHighlight makes TextMate-style syntax highlighting easy for SwiftUI.Text.
 
 ## Usage
 
-SyntaxHighlight uses `.tmLanguage.json` and `.tmTheme` files to highlight source code. None are provided with SyntaxHighlight. Thankfully, there are tons available at [Visual Studio Code Extensions](https://github.com/microsoft/vscode/tree/master/extensions) and [TextMate's GitHub org](https://github.com/textmate).
+SyntaxHighlight uses `.tmTheme` and `.tmLanguage.json` files to highlight source code. None are provided with SyntaxHighlight. Thankfully, there are tons available at [Visual Studio Code Extensions](https://github.com/microsoft/vscode/tree/master/extensions) and [TextMate's GitHub org](https://github.com/textmate).
 
 ```swift
 import SwiftUI
