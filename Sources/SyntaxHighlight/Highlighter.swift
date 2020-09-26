@@ -22,13 +22,13 @@ public struct Highlighter {
         self.grammer = grammer
     }
 
-    public func styledStrings() throws -> [(String, ScopeStyle?)] {
-        var styledStrings: [(String, ScopeStyle?)] = []
+    public func styled() throws -> [(String, Style?)] {
+        var styledStrings: [(String, Style?)] = []
         let parser = self.parser()
         while !parser.isAtEnd {
             guard let currentLine = parser.currentLine else { continue }
             let parsed = try parser.parseLine()
-            let parsedStyles = parsed.map { (token) -> (String, ScopeStyle?) in
+            let parsedStyles = parsed.map { (token) -> (String, Style?) in
                 var string = String(currentLine[token.range])
                 if parsed.last == token {
                     string += "\n"
@@ -47,7 +47,7 @@ public struct Highlighter {
 }
 
 extension Theme {
-    func selectScopeStyle(for token: TMSyntax.Token) -> ScopeStyle? {
+    func selectScopeStyle(for token: TMSyntax.Token) -> Style? {
         var scopePath = token.scopePath
         while !scopePath.items.isEmpty {
             if let style = selectScopeStyle(for: .init(from: scopePath.top)) {

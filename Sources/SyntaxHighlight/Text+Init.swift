@@ -12,7 +12,7 @@ import DynamicColor
 
 public extension Text {
     init(from highlighter: Highlighter) {
-        guard let styleds = try? highlighter.styledStrings() else {
+        guard let styleds = try? highlighter.styled() else {
             self.init(verbatim: highlighter.string)
             return
         }
