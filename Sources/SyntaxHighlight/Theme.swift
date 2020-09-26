@@ -8,37 +8,66 @@
 
 import Foundation
 
-public struct ScopeName: Equatable {
-    var string: String
-    var components: [String] {
-        string.components(separatedBy: ".")
-    }
+public struct Theme {
+    public enum Error : LocalizedError {
+        case decodeError
 
-    public static func == (lhs: ScopeName, rhs: ScopeName) -> Bool {
-        return lhs.string == rhs.string
-    }
-
-    func componentsScopeNames() -> [ScopeName] {
-        var names: [ScopeName] = []
-        var c = components
-        for _ in components {
-            names.append(ScopeName(string: c.joined(separator: ".")))
-            c = c.dropLast()
+        public var errorDescription: String? {
+            switch self {
+            case .decodeError: return "decode error"
+            }
         }
-        return names
+    }
+
+    public var UUID: String
+    public var name: String
+    public var scopeStyles: [Style]
+
+    public init(dictionary: [String: Any]) throws {
+        guard let UUID = dictionary["uuid"] as? String,
+            let name = dictionary["name"] as? String,
+            let rawSettings = dictionary["settings"] as? [[String: AnyObject]]
+            else { throw Error.decodeError }
+        self.UUID = UUID
+        self.name = name
+        var scopeStyles: [Style] = []
+        for raw in rawSettings {
+            if let scopeStyle = Style(from: raw) {
+                scopeStyles.append(scopeStyle)
+            }
+        }
+        self.scopeStyles = scopeStyles
+    }
+
+    public init(contentsOf url: URL) throws {
+        guard let dic = try NSDictionary(contentsOf: url, error: ()) as? [String : AnyObject] else {
+            throw Error.decodeError
+        }
+        try self.init(dictionary: dic)
+    }
+
+    func selectScopeStyle(for scopeName: ScopeName) -> Style? {
+        for theScopeName in scopeName.componentsScopeNames() {
+            for scopeStyle in scopeStyles {
+                if scopeStyle.scope.contains(theScopeName) {
+                    return scopeStyle
+                }
+            }
+        }
+        return nil
     }
 }
 
 public struct Color {
-    var hex: String
+    public var hex: String
 }
 
 public enum Font {
     case italic, bold, underline
 }
 
-public struct ScopeStyle {
-    public var scope: [ScopeName]
+public struct Style {
+    var scope: [ScopeName]
     public var foreground: Color?
     public var background: Color?
     public var fontStyle: Set<Font>
@@ -69,52 +98,23 @@ public struct ScopeStyle {
     }
 }
 
-public struct Theme {
-    public enum Error : LocalizedError {
-        case decodeError
-
-        public var errorDescription: String? {
-            switch self {
-            case .decodeError: return "decode error"
-            }
-        }
+struct ScopeName: Equatable {
+    var string: String
+    var components: [String] {
+        string.components(separatedBy: ".")
     }
 
-    public var UUID: String
-    public var name: String
-    public var scopeStyles: [ScopeStyle]
-
-    public init(dictionary: [String: Any]) throws {
-        guard let UUID = dictionary["uuid"] as? String,
-            let name = dictionary["name"] as? String,
-            let rawSettings = dictionary["settings"] as? [[String: AnyObject]]
-            else { throw Error.decodeError }
-        self.UUID = UUID
-        self.name = name
-        var scopeStyles: [ScopeStyle] = []
-        for raw in rawSettings {
-            if let scopeStyle = ScopeStyle(from: raw) {
-                scopeStyles.append(scopeStyle)
-            }
-        }
-        self.scopeStyles = scopeStyles
+    static func == (lhs: ScopeName, rhs: ScopeName) -> Bool {
+        return lhs.string == rhs.string
     }
 
-    public init(contentsOf url: URL) throws {
-        guard let dic = try NSDictionary(contentsOf: url, error: ()) as? [String : AnyObject] else {
-            throw Error.decodeError
+    func componentsScopeNames() -> [ScopeName] {
+        var names: [ScopeName] = []
+        var c = components
+        for _ in components {
+            names.append(ScopeName(string: c.joined(separator: ".")))
+            c = c.dropLast()
         }
-        try self.init(dictionary: dic)
-    }
-
-    func selectScopeStyle(for scopeName: ScopeName) -> ScopeStyle? {
-        for theScopeName in scopeName.componentsScopeNames() {
-            for scopeStyle in scopeStyles {
-                if scopeStyle.scope.contains(theScopeName) {
-                    return scopeStyle
-                }
-            }
-        }
-        return nil
+        return names
     }
 }
