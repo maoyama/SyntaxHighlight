@@ -18,7 +18,7 @@ struct ContentView: View {
     var grammar = try! Grammar(contentsOf: Bundle.main.url(forResource: "JavaScript.tmLanguage", withExtension: "json")!)
     
     var body: some View {
-        Text(from: Highlighter(string: "// JavaScript", theme: theme, grammer: grammar))
+        Text(from: Highlighter(string: "// JavaScript", theme: theme, grammar: grammar))
     }
 }
 ```
