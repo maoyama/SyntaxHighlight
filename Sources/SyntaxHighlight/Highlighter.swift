@@ -14,12 +14,12 @@ public typealias Grammar = TMSyntax.Grammar
 public struct Highlighter {
     public var string: String
     public var theme: Theme
-    public var grammer: Grammar
+    public var grammar: Grammar
 
-    public init(string: String, theme: Theme, grammer: Grammar) {
+    public init(string: String, theme: Theme, grammar: Grammar) {
         self.string = string
         self.theme = theme
-        self.grammer = grammer
+        self.grammar = grammar
     }
 
     public func styled() throws -> [(String, Style?)] {
@@ -42,7 +42,7 @@ public struct Highlighter {
     }
 
     func parser() -> Parser {
-        Parser(string: string, grammar: grammer)
+        Parser(string: string, grammar: grammar)
     }
 }
 

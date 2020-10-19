@@ -57,7 +57,7 @@ struct ContentView: View {
         Text(from: Highlighter(
                 string: string,
                 theme: theme,
-                grammer: grammar))
+                grammar: grammar))
     }
 }
 

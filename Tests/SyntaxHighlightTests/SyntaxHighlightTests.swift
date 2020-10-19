@@ -37,7 +37,7 @@ public struct ScopeName: Equatable {
     }
 
     func testStyledStrings() throws {
-        let highlighter = Highlighter(string: string, theme: theme, grammer: grammar)
+        let highlighter = Highlighter(string: string, theme: theme, grammar: grammar)
         let styleds = try! highlighter.styled()
         XCTAssertEqual(styleds[0].1!.foreground?.hex, "#8959A8")
         XCTAssertEqual(styleds[2].1!.foreground?.hex, "#8959A8")
@@ -49,7 +49,7 @@ public struct ScopeName: Equatable {
     }
 
     func testStyledStringsSame() throws {
-        let highlighter = Highlighter(string: string, theme: theme, grammer: grammar)
+        let highlighter = Highlighter(string: string, theme: theme, grammar: grammar)
         let styleds = try! highlighter.styled()
         let string2 = styleds.reduce(into: "") { (result, styled) in
             result = result + styled.0
@@ -58,7 +58,7 @@ public struct ScopeName: Equatable {
     }
 
     func testPerformanceParse() throws {
-        let highlighter = Highlighter(string: string, theme: theme, grammer: grammar)
+        let highlighter = Highlighter(string: string, theme: theme, grammar: grammar)
         self.measure {
             let _ = try! highlighter.styled()
         }
