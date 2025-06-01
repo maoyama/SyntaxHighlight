@@ -1,3 +1,5 @@
+// 2
+
 //
 //  Text+Init.swift
 //  SyntaxHighlight
